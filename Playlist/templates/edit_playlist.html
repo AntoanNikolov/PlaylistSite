@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <form action = "/edit_playlist/{{playlist.id}}" method = "post">
+      <p>Modify your playlist here</p>
+      <textarea name="text">{{playlist.text}}</textarea>
+
+      <input type = "submit" value = "submit" />
+
+      </form>
+{% endblock %}

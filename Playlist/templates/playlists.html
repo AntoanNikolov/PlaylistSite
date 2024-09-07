@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Playlists</h3>
+    <ul>
+    {% for playlist in playlists %}
+    <li>
+        {{ playlist.text }} | {{ playlist.author.username }}
+        <a href="/edit_playlist/{{playlist.id}}" class="button">Edit</a>
+        <a href="/delete_playlist/{{playlist.id}}" class="button">Delete</a>
+        <a href="/open_playlist/{{playlist.id}}" class="button">Open Playlist</a>
+    </li>
+    {% endfor %}
+
+    </ul>
+    <a href="/add_playlist" class="button">Add A Playlist</a>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Songs:</h3>
+    <ul>
+    {% for song in songs %}
+    <li>
+        {{ song.text }} | {{ song.author_song.username }}
+        {% if song.youtube_link %}
+            {% if song.youtube_link.startswith('https://www.youtube.com/') %}
+                <iframe width="280" height="153" src="{{ song.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            {% else %}
+                <p>This is not a valid YouTube link.</p>
+            {% endif %}
+
+        {% endif %}
+        <a href="/delete_song/{{song.id}}" class="button">Delete</a>
+    </li>
+    {% endfor %}
+
+    </ul>
+    <a href="/add_song/{{playlist_id}}" class="button">Add a Song</a>
+    <a href="/playlists" class="button">Go Back</a>
+
+
+{% endblock %}

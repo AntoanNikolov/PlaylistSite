@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <form action = "/add_song/{{playlist_id}}" method = "post">
+      <p>Song Display Name:</p>
+      <textarea name="text"></textarea>
+      <p>YouTube Link (use embed format):</p>
+      <p>Example: https://www.youtube.com/embed/dQw4w9WgXcQ</p>
+      <input type="url" name="youtube_link">
+      <input type = "submit" value = "Submit" />
+
+      </form>
+{% endblock %}
